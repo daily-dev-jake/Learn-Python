@@ -1,7 +1,7 @@
 # Game plan
 
 ## Problem Definition
-Player 1 and Player 2 will take turns to input their desired position to place their marks (X or O). One winner will emerge when a player succeeds in placing three of their marks in a horizontal, vertical or diagonal row.
+Tic Tac Toe (TTT) game: Player 1 and Player 2 will take turns to input their desired position to place their marks (X or O). One winner will emerge when a player succeeds in placing three of their marks in a horizontal, vertical or diagonal row.
 
 ### Program stop conditions:
 - Win condition: 1 user to have consecutive hatch positions be it horizontally, vertically or diagonally. (Loser will be the other user)
@@ -20,6 +20,7 @@ Player 1 and Player 2 will take turns to input their desired position to place t
   4 | 5 | 6 
  -----------
   7 | 8 | 9 
+  
 ```
 
 
