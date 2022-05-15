@@ -261,6 +261,21 @@ Output:
 
 ```
 
+## Design of algo
+
+- If input is not an integer and not within 1 - 9, return 'Please enter a 1 digit whole number from 1 to 9 only.'
+	- Otherwise check input if it is already used.
+		- If true, return 'Error: Second User please try again with another number.'
+			- #TODO maybe can give user suggestions (Low priority)
+		- if false, use input and check if ALL values of neighbours are not integers
+			- if true, check if the neighbours have 3 similar (reduce time complexity)
+				- If true, #win_condition check which if symbols are 'X'
+					- If true then User 1 is winner.
+					- Else, User 2 is winner.
+			- If false, check if no available positions available
+				- if true, #draw_condition return: "Draw!"
+				- if false, replace index no. with symbol (according to user no.) at input position
+
 
 
 
