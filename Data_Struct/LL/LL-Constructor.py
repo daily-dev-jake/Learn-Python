@@ -25,7 +25,7 @@ print(my_linked_list.head.value)
 '''
 
 my_linked_list = LinkedList(4)
-LinkedList.print_list()
+my_linked_list.print_list()
 
 
                                                                 
