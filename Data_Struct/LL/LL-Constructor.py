@@ -11,10 +11,21 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
 
-# Initialise and test check 
+    def print_list(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.value, end =' -> ')
+            temp = temp.next
+        
+
+''' #Initialise and test check 
 my_linked_list = LinkedList(4)
 
 print(my_linked_list.head.value)
+'''
+
+my_linked_list = LinkedList(4)
+LinkedList.print_list()
 
 
                                                                 
