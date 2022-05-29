@@ -82,6 +82,12 @@ class LinkedList:
             
         return temp
         
+    def get(self,index):
+        # Edge cases: 
+        # a) when self.length == 0
+        if self.length == 0:
+            return None
+        # b) when self.length == 1
         
 
 ''' #Initialise and test check 
