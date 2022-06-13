@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 .vscode/launch.json
 Learn-Python.code-workspace
+Data_Struct/NUS_DSA_course/Bag.py
+Data_Struct/NUS_DSA_course/n.py
+Data_Struct/NUS_DSA_course/stack-queue.py
