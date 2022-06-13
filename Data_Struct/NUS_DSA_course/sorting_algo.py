@@ -35,12 +35,13 @@ def selectionSort(array):
     """
     n = len(array)
     for i in range(n-1,0, -1):
-        #print(i)
+        
         maxIdx = i
         for j in range(0, i):
             if array[j] > array[maxIdx]:
                 maxIdx = j
         swapElement(array, maxIdx, i)
+        print(array)
 
 def insertionSort(array):
     """
@@ -54,6 +55,7 @@ def insertionSort(array):
             array[j+1] = array[j]
             j = j-1
         array[j+1] = next
+        print(array)
 
 def bubbleSort(array):
     """
@@ -63,7 +65,8 @@ def bubbleSort(array):
     for i in range(n-1, 0, -1):
         for j in range (1, i+1):
             if array[j-1] > array[j]:
-                swapElement(array, j, j-1) 
+                swapElement(array, j, j-1)
+                print(array)
 
 def bubbleSortEarly(array):
     """
@@ -78,6 +81,24 @@ def bubbleSortEarly(array):
                 isSorted = False
         if isSorted:
             return
+        print(array)
+
+def recursive_bubble_sort(data):
+    data = data[:]
+    if len(data) == 1:
+        return data
+
+    last = data.pop()
+    sorted_data = recursive_bubble_sort(data)
+    for i in range(len(sorted_data)):
+        if last < sorted_data[i]:
+            sorted_data.insert(i, last)
+            print(sorted_data)
+            break
+    else:
+        sorted_data.append(last)
+        print(sorted_data)
+    return sorted_data
 
 
 def mergeSort( array, low, high ):
@@ -90,6 +111,7 @@ def mergeSort( array, low, high ):
         mergeSort(array, low, mid)
         mergeSort(array, mid+1, high)
         merge(array, low, mid, high)
+        print(array)
 
 def merge( array, low, mid, high ):
     """
@@ -132,10 +154,12 @@ def quickSort ( array, low, high ):
     """
     Quick sort on array[low..high]
     """
+    
     if low < high :
         pivotIdx = partition( array, low, high )
         quickSort( array, low, pivotIdx-1)
         quickSort( array, pivotIdx + 1, high )
+        
 
 def partition( array, i, j ):
     """
@@ -147,10 +171,13 @@ def partition( array, i, j ):
     middle = i
 
     for k in range (i+1,j+1):
+        
         if array[k] < pivot:
             middle = middle + 1
             swapElement(array, k, middle)
-
+            
+            print(k)
+    print(array)            
     swapElement(array, i, middle)
     return middle
 
@@ -171,6 +198,7 @@ def radixSort(array):
         digitBin = [[] for d in range(10)]
         distribute(array, digitBin, power)
         collect(digitBin, array)
+        print(array)
 
 def distribute(array, digitBin, power):
     """
@@ -196,7 +224,7 @@ def collect(digitBin, array):
 def main():
 
     #uncomment one of the following to test a specific sorting algorithm
-    # sort = selectionSort
+    #sort = selectionSort
     sort = insertionSort
     #sort = bubbleSort
     #sort = bubbleSortEarly
@@ -236,23 +264,28 @@ def main():
     #################################
     
     #For user chosen array size and randomly generated array
-    # N = int(input("Enter N: "))
-    # bigArray = [random.randint(1, 1000000) for i in range(N)]
+    #N = int(input("Enter N: "))
+    #bigArray = [random.randint(1, 100) for i in range(N)]
+    lis = [24,12,11,20,19,9,5,17]
 
-    # # Uncomment for time measurement
-    # start_time = time.time()
-    # sort(bigArray)
-    # print("---Sort(%d) =  %s seconds ---" % (N, (time.time() - start_time)))
+    # Uncomment for time measurement
+    #start_time = time.time()
+    #print(bigArray)
+    #sort(bigArray)
+    sort(lis)
+    
+    # new = recursive_bubble_sort(bigArray)
+    #recursive_bubble_sort(bigArray)
+    
+    # print(new[0])
+    #print("---Sort(%d) =  %s seconds ---" % (N, (time.time() - start_time)))
     
     #################################
     # Tutorial                      #
     #################################
     
-    lis = [1285,5,150,4746,602,5,8356]
-    # selectionSort(lis)
-    sort(lis)
-
-
+        
+    
 if __name__ == "__main__":
     main()
 
